@@ -193,6 +193,7 @@ const Hero = () => {
 const Works = () => {
   const works = [
     { title: '親愛なるふぉいへ / DJ SHACHO - Dear Foy', category: 'YOUTUBE', url: 'https://youtu.be/0cPRPZDce68?si=zH-4TtOxQSJQcrHl', image: 'https://img.youtube.com/vi/0cPRPZDce68/maxresdefault.jpg' },
+    { title: 'Gong cha ショートアニメPV', category: 'TIKTOK', url: 'https://www.tiktok.com/@gongcha_japan/video/7617858493025979668?is_from_webapp=1&sender_device=pc&web_id=7613336404365510161', image: '/assets/gongcha_thumb.jpg' },
     { title: 'Dr.MARTENS 新作PV', category: 'INSTAGRAM', url: 'https://www.instagram.com/reel/DLqc6rsM8pY/?igsh=MXM1eHVwcTA0cHoxMA==', image: '/assets/dr_martens_pv.jpg' },
     { title: 'けんじイケメン化計画 - YouTube', category: 'YOUTUBE', url: 'https://youtu.be/V-BIJxHB_fw?si=eHUQpfb0h7TlDy6h', image: 'https://img.youtube.com/vi/V-BIJxHB_fw/maxresdefault.jpg' },
     { title: 'AIが考えた"短編映画"『怪獣』', category: 'YOUTUBE', url: 'https://youtu.be/7Eu0QTsAGHQ?si=z_oP64TnvyIHZ3xC', image: 'https://img.youtube.com/vi/7Eu0QTsAGHQ/maxresdefault.jpg' },
