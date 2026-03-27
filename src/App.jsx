@@ -198,6 +198,8 @@ const Works = () => {
     { title: 'けんじイケメン化計画 - YouTube', category: 'YOUTUBE', url: 'https://youtu.be/V-BIJxHB_fw?si=eHUQpfb0h7TlDy6h', image: 'https://img.youtube.com/vi/V-BIJxHB_fw/maxresdefault.jpg' },
     { title: 'AIが考えた"短編映画"『怪獣』', category: 'YOUTUBE', url: 'https://youtu.be/7Eu0QTsAGHQ?si=z_oP64TnvyIHZ3xC', image: 'https://img.youtube.com/vi/7Eu0QTsAGHQ/maxresdefault.jpg' },
     { title: '【AIが考えた】『機動戦士DunGam AIZaaaaaaR（アイザー）-Beginning-』予告', category: 'YOUTUBE', url: 'https://youtu.be/XRAMr4zTsxI?si=6kxBxJZMZMg0yC53', image: 'https://img.youtube.com/vi/XRAMr4zTsxI/maxresdefault.jpg' },
+    { title: 'IFE - Maleficent (Official Music Video)', category: 'YOUTUBE', url: 'https://youtu.be/7DsQg24fVZY?si=bGwpMFjXRgmYssPq', image: 'https://img.youtube.com/vi/7DsQg24fVZY/maxresdefault.jpg' },
+    { title: '【MUSIC VIDEO】「千年愛歌-五月雨-」/剣豪スレイヤー', category: 'YOUTUBE', url: 'https://youtu.be/pnAT2TNRKoA?si=CfbXPJSj4ytFeQXq', image: 'https://img.youtube.com/vi/pnAT2TNRKoA/maxresdefault.jpg' },
     { title: 'etc...', category: 'OTHERS', url: '#', image: '/assets/etc_bg.png' },
   ];
 
