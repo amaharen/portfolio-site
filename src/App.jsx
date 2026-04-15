@@ -130,6 +130,16 @@ const Navbar = () => {
 const Hero = () => {
   return (
     <section id="hero" className="hero-section">
+      {/* 背景動画 */}
+      <video
+        className="hero-bg-video"
+        src="/シーケンス01.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+
       <motion.div
         className="container hero-content"
         initial={{ opacity: 0, y: 30 }}
@@ -156,9 +166,21 @@ const Hero = () => {
           position: relative;
           overflow: hidden;
         }
+        .hero-bg-video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0.8;
+          z-index: 0;
+          pointer-events: none;
+        }
         .hero-content {
           text-align: center;
           z-index: 1;
+          position: relative;
         }
         .hero-subline {
           font-size: 1.2rem;
@@ -206,7 +228,7 @@ const Works = () => {
   return (
     <section id="works" className="works-section">
       <div className="container-fluid">
-        <div className="container">
+        <div className="works-header">
           <h2 className="section-title"><span className="neon-text">/</span> WORKS</h2>
         </div>
         <div className="works-grid">
@@ -241,9 +263,13 @@ const Works = () => {
         .container-fluid {
            width: 100%;
         }
+        .works-header {
+          padding: 0 20px;
+          margin-bottom: 50px;
+        }
         .section-title {
           font-size: 2.5rem;
-          margin-bottom: 50px;
+          text-align: left;
         }
         .works-grid {
           display: grid;
