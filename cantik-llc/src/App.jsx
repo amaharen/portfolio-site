@@ -122,6 +122,7 @@ const Navbar = () => {
         }
         .mobile-only { display: none; }
         @media (max-width: 768px) {
+          .nav-container-wide { padding: 0 5px; }
           .desktop-only { display: none; }
           .mobile-only { display: block; }
           .mobile-menu {
