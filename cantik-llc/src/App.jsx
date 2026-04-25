@@ -122,7 +122,8 @@ const Navbar = () => {
         }
         .mobile-only { display: none; }
         @media (max-width: 768px) {
-          .nav-container-wide { padding: 0 5px; }
+          .nav-container-wide { padding: 0 15px 0 10px; }
+          .logo-img { height: 50px; }
           .desktop-only { display: none; }
           .mobile-only { display: block; }
           .mobile-menu {
