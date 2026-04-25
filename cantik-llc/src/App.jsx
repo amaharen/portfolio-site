@@ -657,8 +657,46 @@ const About = () => {
 };
 
 const Contact = () => {
-  const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSexVBRaO3jIcgOse3I9EPFsaSn1h4SvbPzFcwyDGyQG0qrcHQ/viewform?usp=dialog";
-  const email = "ren.amaha1004@gmail.com";
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("送信中...");
+
+    const payload = {
+      access_key: "04376bdf-5bf3-4831-afaa-3a28005b797e",
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+      subject: `【CANTIK LLC お問い合わせ】${formData.name}様より`
+    };
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json();
+      if (result.success) {
+        setStatus("送信が完了しました！お問い合わせありがとうございます。");
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus("送信に失敗しました。再度お試しいただくか、メールで直接ご連絡ください。");
+      }
+    } catch (error) {
+      console.log(error);
+      setStatus("通信エラーが発生しました。");
+    }
+  };
 
   return (
     <section id="contact" className="contact-section">
@@ -668,14 +706,43 @@ const Contact = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-title centered-title">CANTIK LLC 動画制作<br />お問い合わせフォーム</h2>
+          <h2 className="section-title centered-title">CANTIK LLC 動画制作<br />お問い合わせ</h2>
           <p className="contact-description">
             プロジェクトのご依頼や、ご相談はこちらからお気軽にご連絡ください。<br />
             共に未来の映像を創りましょう。
           </p>
-          <a href={formUrl} target="_blank" rel="noopener noreferrer" className="cta-button neon-border">
-            EMAIL FORM <Mail size={20} />
-          </a>
+
+          <form onSubmit={handleSubmit} className="contact-form">
+            <input
+              type="text"
+              name="name"
+              placeholder="お名前 / 企業名"
+              required
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="メールアドレス"
+              required
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <textarea
+              name="message"
+              placeholder="ご相談内容"
+              rows="5"
+              required
+              value={formData.message}
+              onChange={handleChange}
+            ></textarea>
+            <button type="submit" className="cta-button neon-border">
+              送信する <Mail size={20} />
+            </button>
+            {status && <p className="form-status neon-text">{status}</p>}
+          </form>
+
         </motion.div>
       </div>
       <style jsx>{`
@@ -690,6 +757,38 @@ const Contact = () => {
           color: #aaa;
           line-height: 1.8;
           text-align: center;
+        }
+        .contact-form {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          max-width: 500px;
+          margin: 0 auto;
+          text-align: left;
+        }
+        .contact-form input,
+        .contact-form textarea {
+          width: 100%;
+          padding: 15px;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid #333;
+          color: white;
+          font-family: inherit;
+          font-size: 1rem;
+          border-radius: 5px;
+          transition: all 0.3s ease;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+          outline: none;
+          border-color: var(--accent-color);
+          box-shadow: 0 0 10px rgba(188, 19, 254, 0.2);
+          background: rgba(255, 255, 255, 0.1);
+        }
+        .contact-form button {
+          cursor: pointer;
+          justify-content: center;
+          margin-top: 10px;
         }
       `}</style>
     </section>
