@@ -669,7 +669,7 @@ const Contact = () => {
     setStatus("送信中...");
 
     const payload = {
-      access_key: "04376bdf-5bf3-4831-afaa-3a28005b797e",
+      access_key: "54fa09b7-5847-45d2-bb75-121c3a6342ec",
       name: formData.name,
       email: formData.email,
       message: formData.message,
