@@ -309,8 +309,7 @@ const Works = () => {
           overflow: hidden;
           margin-bottom: 15px;
         }
-        .work-image-container img,
-        .work-image-container .work-video {
+        .work-image-container img {
           position: absolute;
           top: 0;
           left: 0;
@@ -318,11 +317,18 @@ const Works = () => {
           height: 100%;
           object-fit: cover;
           display: block;
-          transform: translateZ(0);
-          will-change: transform;
-        }
-        .work-image-container img {
           transition: transform 0.5s ease;
+        }
+        .work-image-container .work-video {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          min-width: 100%;
+          min-height: 100%;
+          width: auto;
+          height: auto;
+          transform: translate(-50%, -50%);
+          display: block;
         }
         .work-card:hover img {
           transform: scale(1.05);
