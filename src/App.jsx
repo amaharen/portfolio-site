@@ -248,12 +248,12 @@ const Works = () => {
               <div className="work-image-container neon-border">
                 {work.video ? (
                   <video
+                    className="work-video"
                     src={work.video}
                     autoPlay
                     loop
                     muted
                     playsInline
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 ) : (
                   <img src={work.image} alt={work.title} />
@@ -309,10 +309,19 @@ const Works = () => {
           overflow: hidden;
           margin-bottom: 15px;
         }
-        .work-image-container img {
+        .work-image-container img,
+        .work-image-container .work-video {
+          position: absolute;
+          top: 0;
+          left: 0;
           width: 100%;
           height: 100%;
           object-fit: cover;
+          display: block;
+          transform: translateZ(0);
+          will-change: transform;
+        }
+        .work-image-container img {
           transition: transform 0.5s ease;
         }
         .work-card:hover img {
