@@ -1,20 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800&family=Rajdhani:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
 
 :root {
   /* Colors */
-  --bg-color: #050505;
-  --text-color: #ffffff;
-  --accent-color: #bc13fe; /* Neon Purple */
-  --accent-color-glow: rgba(188, 19, 254, 0.6);
-  --secondary-color: #1a1a1a;
+  --bg-color: #101117;          /* 真っ黒から上品で視認性の高いディープダークに */
+  --bg-color-alt: #161720;      /* セクション背景グラデーション用 */
+  --secondary-color: #191b26;   /* カード等の背景色 */
+  --secondary-color-hover: #212433;
+  --text-color: #f3f4f6;
+  --text-muted: #9ca3af;
+  --accent-color: #b845ff;      /* 鮮やかでコントラストの高いパープル */
+  --accent-color-light: #d466ff;
+  --accent-color-subtle: rgba(184, 69, 255, 0.15);
+  --accent-color-glow: rgba(184, 69, 255, 0.35);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-accent: rgba(184, 69, 255, 0.35);
   
   /* Fonts */
-  --font-main: 'Rajdhani', sans-serif;
-  --font-accent: 'Orbitron', sans-serif;
+  --font-main: 'Rajdhani', 'Noto Sans JP', sans-serif;
+  --font-accent: 'Orbitron', 'Noto Sans JP', sans-serif;
 
   /* Spacing */
   --header-height: 80px;
-  --section-padding: 100px 20px;
+  --section-padding: 100px 24px;
 }
 
 * {
@@ -33,18 +40,21 @@ body {
   font-family: var(--font-main);
   line-height: 1.6;
   overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(184, 69, 255, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 85% 65%, rgba(140, 45, 255, 0.04) 0%, transparent 40%);
+  background-attachment: fixed;
 }
 
 h1, h2, h3, h4, .font-accent {
   font-family: var(--font-accent);
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 ul {
@@ -59,26 +69,33 @@ button {
 }
 
 /* Utilities */
+/* 滲み・ブラーを抑え、シャープで読みやすい紫テキスト */
 .neon-text {
   color: var(--accent-color);
-  text-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color-glow);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  /* ぼやけの原因だった多重text-shadowを廃止し、クリアで引き締まった視認性に */
+  text-shadow: 0 0 1px rgba(184, 69, 255, 0.4);
 }
 
 .neon-border {
-  border: 1px solid var(--accent-color);
-  box-shadow: 0 0 5px var(--accent-color), inset 0 0 5px var(--accent-color-glow);
+  border: 1px solid var(--border-accent);
+  box-shadow: 0 0 12px rgba(184, 69, 255, 0.12);
+  transition: all 0.3s ease;
+}
+
+.neon-border:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 16px rgba(184, 69, 255, 0.25);
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 section {
   padding: var(--section-padding);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  position: relative;
 }
