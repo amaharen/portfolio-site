@@ -307,8 +307,9 @@ const Works = () => {
   // 並び順：
   // 1: L'Arc-en-Ciel 35th
   // 2: 原宿 ULTRA MART
-  // 3: お前嘘臭ぇんだよスギ / チバニャンの波動チャンネル
-  // 4以降: 新しい順
+  // 3: yukaDD「いま光った」
+  // 4: お前嘘臭ぇんだよスギ / チバニャンの波動チャンネル
+  // 5以降: 新しい順
   const works = [
     {
       title: "L'Arc-en-Ciel 35th L'Anniversary TOUR オープニング/ライブ演出/CM映像制作",
@@ -321,6 +322,12 @@ const Works = () => {
       category: 'SIGNAGE / STORE',
       url: '#',
       video: '/assets/ultramart_signage.mp4',
+    },
+    {
+      title: 'yukaDD「いま光った」Music Video AI映像制作',
+      category: 'MUSIC VIDEO',
+      url: 'https://youtu.be/2C7gZ_v4Wfk?si=DJTkh_Tfr2hR_dbY',
+      image: 'https://img.youtube.com/vi/2C7gZ_v4Wfk/maxresdefault.jpg',
     },
     {
       title: 'お前嘘臭ぇんだよスギ / チバニャンの波動チャンネル',
